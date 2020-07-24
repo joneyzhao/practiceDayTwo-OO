@@ -13,4 +13,14 @@ public class StudentTest {
 
         assertEquals(introduction, "My name is Tom. I am 21 years old. I am a Student of Class 2.");
     }
+
+//    @Test
+//    public void should_return_student_introduction_when_student_introduce_given_person_class(){
+//        Person person = new Person("Tom", 21);
+//        Student student = new Student(person, 2);
+//
+//        String introduction = student.introduce();
+//
+//        assertEquals(introduction, "My name is Tom. I am 21 years old. I am a Student of Class 2.");
+//    }
 }
