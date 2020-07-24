@@ -3,6 +3,7 @@ package com.thoughtworks.basic;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -19,6 +20,7 @@ public class HelloWorldTest {
 
         //then
         assertEquals(actual,"Leave me alone.");
+//        assertThat(actual, is("Leave me alone."));
     }
 
     @Test
