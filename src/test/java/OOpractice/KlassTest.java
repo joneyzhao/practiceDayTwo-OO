@@ -50,4 +50,26 @@ public class KlassTest {
         assertEquals(klass.getStudents().get(0), studentOne);
         assertEquals(klass.getTeacher(), teacher);
     }
+
+
+    @Test
+    public void should_notice_message_when_Klass_notice_given_student_klass_change(){
+        Klass klass = new Klass(2);
+        Teacher teacher = new Teacher("Shaly", 30, "Teacher");
+        Student studentOne = new Student("Tom", 21, klass);
+        Student studentTwo = new Student("Bob", 20, klass);
+        klass.assign(teacher);
+        klass.appendStudent(studentOne);
+        klass.appendStudent(studentTwo);
+
+        Klass klass1 = new Klass(1);
+        Teacher teacher1 = new Teacher("FeeDe", 30, "Teacher");
+        Student student1One = new Student("Meni", 19, klass);
+        Student student1Two = new Student("Bule", 20, klass);
+        klass1.assign(teacher1);
+        klass1.appendStudent(student1One);
+        klass1.appendStudent(student1Two);
+
+        studentOne.changeKlass(klass1);
+    }
 }

@@ -17,6 +17,18 @@ public class Student extends Person {
         String message = introduce();
         klass.notifyObserver(message);
     }
+
+    public void changeKlass(Klass newKlass){
+        Klass previousKlass = this.klass;
+        this.klass = newKlass;
+        String message = introduce();
+        previousKlass.deleteObserver(this);
+        System.out.println("previousKlass-observeList: " + previousKlass.observersList);
+        previousKlass.notifyObserver(message);
+        klass.addObserver(this);
+        System.out.println("klass-observeList: " + klass.observersList);
+        klass.notifyObserver(message);
+    }
 }
 
 
