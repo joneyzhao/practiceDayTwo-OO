@@ -7,7 +7,8 @@ import static org.junit.Assert.assertEquals;
 public class StudentTest {
     @Test
     public void should_return_student_introduction_when_student_introduce_given_name_age_class(){
-        Student student = new Student("Tom", 21, 2);
+        Klass klass = new Klass(2);
+        Student student = new Student("Tom", 21, klass);
 
         String introduction = student.introduce();
 
