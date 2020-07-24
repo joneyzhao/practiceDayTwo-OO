@@ -3,6 +3,7 @@ package OOpractice;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class KlassTest {
 
@@ -31,5 +32,22 @@ public class KlassTest {
 
         assertEquals(klass.getStudents().size(), 1);
         assertEquals(klass.getStudents().get(0), studentOne);
+    }
+
+    @Test
+    public void should_notice_message_when_Klass_notice_given_student_name_change(){
+        Klass klass = new Klass(2);
+        Teacher teacher = new Teacher("Shaly", 30, "Teacher");
+        Student studentOne = new Student("Tom", 21, klass);
+        Student studentTwo = new Student("Bob", 20, klass);
+        klass.assign(teacher);
+        klass.appendStudent(studentOne);
+        klass.appendStudent(studentTwo);
+
+        studentOne.changeName("TomFord");
+
+        assertEquals(klass.getStudents().size(), 2);
+        assertEquals(klass.getStudents().get(0), studentOne);
+        assertEquals(klass.getTeacher(), teacher);
     }
 }
